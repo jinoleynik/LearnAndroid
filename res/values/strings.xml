@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">learn</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+	<string name="one">Text number ONE</string>
+	<string name="two">Text number TWO</string>
+	<string name="three">Text number THREE</string>
+	<string name="gonext">Next activity</string>
+</resources>

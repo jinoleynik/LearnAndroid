@@ -38,6 +38,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.activity.BaseActivity;
 import com.example.learn.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
@@ -52,7 +53,7 @@ import com.system.SHZApplication;
  * @author dswitkin@google.com (Daniel Switkin)
  * @author Sean Owen
  */
-public final class CaptureActivity extends Activity implements
+public final class CaptureActivity extends BaseActivity implements
         SurfaceHolder.Callback {
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
@@ -81,6 +82,8 @@ public final class CaptureActivity extends Activity implements
     private String characterSet;
     private InactivityTimer inactivityTimer;
     private SHZApplication mApp;
+
+    private String mResText="";
 
     ViewfinderView getViewfinderView() {
         return viewfinderView;
@@ -241,24 +244,28 @@ public final class CaptureActivity extends Activity implements
         inactivityTimer.onActivity();
         lastResult = rawResult;
         // check ticket
-//        Intent intent = new Intent();
+        // Intent intent = new Intent();
         Matrix matrix = new Matrix();
         matrix.setScale(0.5f, 0.5f);
         final Bitmap barcodeSmall = Bitmap.createBitmap(barcode, 0, 0,
                 barcode.getWidth(), barcode.getHeight(), matrix, true);
         barcode.recycle();
-        Intent sendcode = new Intent(this, SHZService.class);
-        sendcode.setAction(MyConst.ACTION_SEND_QR);
-        sendcode.putExtra(MyConst.QRCODE, rawResult.getText());
-        sendBroadcast(sendcode);
-        ((SHZApplication) getApplication()).addQRText(rawResult.getText());
-        Toast.makeText(this, "add res", Toast.LENGTH_SHORT).show();
+        String res = rawResult.getText();
+        if (!mResText.equals(res)) {
+            mResText = res;
+            Intent sendcode = new Intent(this, SHZService.class);
+            sendcode.setAction(MyConst.ACTION_SEND_QR);
+            sendcode.putExtra(MyConst.QRCODE, res);
+            sendBroadcast(sendcode);
+            ((SHZApplication) getApplication()).addQRText(rawResult.getText());
+            Toast.makeText(this, "add res", Toast.LENGTH_SHORT).show();
+            playResource(R.raw.ugu);
+        }
         restartScan();
-//        startService(sendcode);
-
-//        intent.putExtra(MyConst.EXTRA_CODE_TEXT, rawResult.getText());
-//        setResult(Activity.RESULT_OK, intent);
-//        finish();
+        // startService(sendcode);
+        // intent.putExtra(MyConst.EXTRA_CODE_TEXT, rawResult.getText());
+        // setResult(Activity.RESULT_OK, intent);
+        // finish();
     }
 
     private void initCamera(SurfaceHolder surfaceHolder) {
@@ -304,6 +311,12 @@ public final class CaptureActivity extends Activity implements
     private void resetStatusView() {
         viewfinderView.setVisibility(View.VISIBLE);
         lastResult = null;
+    }
+
+    @Override
+    public void onClick(View arg0) {
+        // TODO Auto-generated method stub
+
     }
 
 }

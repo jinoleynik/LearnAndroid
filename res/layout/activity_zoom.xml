@@ -3,17 +3,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >  
-<!-- <com.example.learn.ZoomView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-      android:background="@drawable/categories"
-   /> -->
-   <WebView 
-       android:id="@+id/web_view_zoom"
-           android:layout_width="match_parent"
-    android:layout_height="match_parent"
-       />
+    android:orientation="vertical" >
+
+    <com.view.ZoomView
+        android:id="@+id/zoom_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" />
 
 </FrameLayout>

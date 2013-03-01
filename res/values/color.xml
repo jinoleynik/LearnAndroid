@@ -2,6 +2,47 @@
 <resources>
     <color name="color1">#ffff5923</color>
     <color name="color2">#ff1012ff</color>
-    <color name="color3">#ff43ff23</color>
-    
+    <color name="color3">#ff43ff23</color>   
+    <color name="lightgray">#FFe5e5e5</color>
+    <color name="darkgray">#FF8e8e8e</color>
+    <color name="moredarkgray">#FF696969</color>
+    <!-- <color name="nightgray">#FF444548</color> -->
+    <color name="zebra_gray">#FFf4f5f7</color>
+    <color name="nightgray">#FF2B2B2B</color>
+    <color name="lightblue">#FF00aeef</color>
+    <!-- <color name="grayblue">#FFC1D9EC</color> -->
+    <color name="darkblue">#FF0072BC</color>
+    <!-- <color name="lightblue_1">#FF2CA9DF</color> -->
+    <color name="text_shadow">#AA000000</color>
+    <color name="lightgreen">#FF8dc73f</color>
+    <color name="lightgreen_1">#FF96BB5E</color>
+    <color name="cabinet_header_bg">#FF436ba2</color>
+
+    <!-- Game screen -->
+    <color name="background_color">#FF6b8ca6</color>
+
+    <!-- fragment_real_recharge -->
+    <color name="real_recharge_pressed">#FF1a65cb</color>
+    <color name="header_bg">#FF8C9FB0</color>
+
+    <!-- RulesListFragment -->
+    <color name="bg_section">#FF30578D</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#808080</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="digitaltext">#6799ca</color>
+    <color name="bg_blue">#E0011020</color>
+    <color name="edit_field_text_selected">#ff3e1327</color>
+    <color name="edit_field_text">#FFFFFFFF</color>
+    <color name="scrollbars_color">#295170</color>
+    <color name="text">#FF404040</color>
 </resources>

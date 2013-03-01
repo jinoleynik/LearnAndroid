@@ -18,9 +18,54 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        /**  Game screen 
+         */
+        public static final int background_color=0x7f05000e;
+        public static final int bg_blue=0x7f05001f;
+        /**  RulesListFragment 
+         */
+        public static final int bg_section=0x7f050011;
+        public static final int black=0x7f05001c;
+        public static final int cabinet_header_bg=0x7f05000d;
         public static final int color1=0x7f050000;
         public static final int color2=0x7f050001;
         public static final int color3=0x7f050002;
+        /**  <color name="grayblue">#FFC1D9EC</color> 
+         */
+        public static final int darkblue=0x7f050009;
+        public static final int darkgray=0x7f050004;
+        public static final int digitaltext=0x7f05001e;
+        public static final int edit_field_text=0x7f050021;
+        public static final int edit_field_text_selected=0x7f050020;
+        public static final int gray=0x7f05001b;
+        public static final int header_bg=0x7f050010;
+        public static final int lightblue=0x7f050008;
+        public static final int lightgray=0x7f050003;
+        public static final int lightgreen=0x7f05000b;
+        public static final int lightgreen_1=0x7f05000c;
+        public static final int moredarkgray=0x7f050005;
+        public static final int nightgray=0x7f050007;
+        public static final int possible_result_points=0x7f050012;
+        /**  fragment_real_recharge 
+         */
+        public static final int real_recharge_pressed=0x7f05000f;
+        public static final int result_minor_text=0x7f050013;
+        public static final int result_text=0x7f050014;
+        public static final int result_view=0x7f050015;
+        public static final int scrollbars_color=0x7f050022;
+        public static final int status_text=0x7f050016;
+        public static final int text=0x7f050023;
+        /**  <color name="lightblue_1">#FF2CA9DF</color> 
+         */
+        public static final int text_shadow=0x7f05000a;
+        public static final int transparent=0x7f05001d;
+        public static final int viewfinder_frame=0x7f050017;
+        public static final int viewfinder_laser=0x7f050018;
+        public static final int viewfinder_mask=0x7f050019;
+        public static final int white=0x7f05001a;
+        /**  <color name="nightgray">#FF444548</color> 
+         */
+        public static final int zebra_gray=0x7f050006;
     }
     public static final class drawable {
         public static final int back_web=0x7f020000;
@@ -31,55 +76,81 @@ public final class R {
         public static final int categories=0x7f020005;
         public static final int ic_action_search=0x7f020006;
         public static final int ic_launcher=0x7f020007;
-        public static final int page_list=0x7f020008;
+        public static final int ironmanua=0x7f020008;
+        public static final int page_list=0x7f020009;
     }
     public static final class id {
-        public static final int additem=0x7f090001;
-        public static final int banner=0x7f09000a;
-        public static final int btn_1=0x7f090007;
-        public static final int btn_2=0x7f090008;
-        public static final int btn_3=0x7f090009;
-        public static final int col1=0x7f090012;
-        public static final int col2=0x7f090013;
-        public static final int col3=0x7f090014;
-        public static final int deleteitem=0x7f090003;
-        public static final int flipper=0x7f09000e;
-        public static final int image_view_zoom=0x7f090010;
-        public static final int left_panel=0x7f090006;
-        public static final int listView1=0x7f090004;
-        public static final int main=0x7f090000;
-        public static final int menu_settings=0x7f090011;
-        public static final int oneid=0x7f09000c;
-        public static final int secondtwo=0x7f09000d;
-        public static final int twoid=0x7f09000f;
-        public static final int updateitem=0x7f090002;
-        public static final int web_view_zoom=0x7f09000b;
-        public static final int webview=0x7f090005;
+        public static final int additem=0x7f06000d;
+        /**  Messages IDs 
+         */
+        public static final int auto_focus=0x7f060000;
+        public static final int banner=0x7f060018;
+        public static final int btn_1=0x7f060015;
+        public static final int btn_2=0x7f060016;
+        public static final int btn_3=0x7f060017;
+        public static final int btn_qr=0x7f06001e;
+        public static final int btn_qrcode=0x7f060011;
+        public static final int btn_wisp=0x7f06001c;
+        public static final int btn_zoom=0x7f06001d;
+        public static final int col1=0x7f060025;
+        public static final int col2=0x7f060026;
+        public static final int col3=0x7f060027;
+        public static final int color_first=0x7f060019;
+        public static final int color_second=0x7f06001a;
+        public static final int decode=0x7f060001;
+        public static final int decode_failed=0x7f060002;
+        public static final int decode_succeeded=0x7f060003;
+        public static final int deleteitem=0x7f06000f;
+        public static final int encode_failed=0x7f060004;
+        public static final int encode_succeeded=0x7f060005;
+        public static final int flipper=0x7f060021;
+        public static final int image_view_zoom=0x7f060023;
+        public static final int launch_product_query=0x7f060006;
+        public static final int left_panel=0x7f060014;
+        public static final int listView1=0x7f060010;
+        public static final int main=0x7f06000c;
+        public static final int menu_settings=0x7f060024;
+        public static final int oneid=0x7f06001f;
+        public static final int preview_view=0x7f06000a;
+        public static final int quit=0x7f060007;
+        public static final int restart_preview=0x7f060008;
+        public static final int return_scan_result=0x7f060009;
+        public static final int secondtwo=0x7f060020;
+        public static final int tv_codes=0x7f060012;
+        public static final int twoid=0x7f060022;
+        public static final int updateitem=0x7f06000e;
+        public static final int viewfinder_view=0x7f06000b;
+        public static final int webview=0x7f060013;
+        public static final int zoom_view=0x7f06001b;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_web=0x7f030001;
-        public static final int activity_zoom=0x7f030002;
-        public static final int one=0x7f030003;
-        public static final int second=0x7f030004;
-        public static final int two=0x7f030005;
-        public static final int zoom_view=0x7f030006;
+        public static final int activity_capture=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_qrcode=0x7f030002;
+        public static final int activity_web=0x7f030003;
+        public static final int activity_wisp=0x7f030004;
+        public static final int activity_zoom=0x7f030005;
+        public static final int main_activity=0x7f030006;
+        public static final int one=0x7f030007;
+        public static final int second=0x7f030008;
+        public static final int two=0x7f030009;
+        public static final int zoom_view=0x7f03000a;
     }
     public static final class menu {
-        public static final int activity_main=0x7f080000;
-        public static final int context_menu=0x7f080001;
+        public static final int activity_main=0x7f090000;
+        public static final int context_menu=0x7f090001;
     }
     public static final class string {
-        public static final int app_name=0x7f060000;
-        public static final int gonext=0x7f060007;
-        public static final int hello_world=0x7f060001;
-        public static final int menu_settings=0x7f060002;
-        public static final int one=0x7f060004;
-        public static final int three=0x7f060006;
-        public static final int title_activity_main=0x7f060003;
-        public static final int two=0x7f060005;
+        public static final int app_name=0x7f070000;
+        public static final int gonext=0x7f070006;
+        public static final int menu_settings=0x7f070001;
+        public static final int msg_camera_framework_bug=0x7f070007;
+        public static final int one=0x7f070003;
+        public static final int three=0x7f070005;
+        public static final int title_activity_main=0x7f070002;
+        public static final int two=0x7f070004;
     }
     public static final class style {
-        public static final int AppTheme=0x7f070000;
+        public static final int AppTheme=0x7f080000;
     }
 }

@@ -2,7 +2,6 @@ package com.activity;
 
 import java.net.URLEncoder;
 
-import logik.LWebclient;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 
 import com.example.learn.R;
+import com.logik.LWebclient;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class WebActivity extends BaseActivity implements OnClickListener {  

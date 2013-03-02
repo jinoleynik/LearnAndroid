@@ -1,0 +1,7 @@
+bin/
+gen/
+obj/
+lint.xml
+.classpath
+.settings/
+.idea/

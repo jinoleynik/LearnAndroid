@@ -11,7 +11,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         registerOnClickListener(new int[] { R.id.btn_wisp, R.id.btn_zoom,
-                 R.id.btn_qr }, this.getCurrentFocus());
+                 R.id.btn_qr, R.id.btn_path, R.id.btn_memory}, this.getCurrentFocus());
     }
 
     @Override
@@ -26,6 +26,12 @@ public class MainActivity extends BaseActivity {
       
         case R.id.btn_qr:
             startActivity(QRactivity.class);
+            break;
+        case R.id.btn_path:
+            startActivity(PathActivity.class);
+            break;
+        case R.id.btn_memory:
+            startActivity(MemoryActivity.class);
             break;
         default:
             break;

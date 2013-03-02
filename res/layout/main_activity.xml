@@ -22,4 +22,16 @@
         android:layout_height="wrap_content"
         android:text="QRCODE" />
 
+    <Button
+        android:id="@+id/btn_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PATH" />
+
+    <Button
+        android:id="@+id/btn_memory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MEMORY" />
+
 </LinearLayout>

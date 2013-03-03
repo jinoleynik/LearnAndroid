@@ -11,6 +11,10 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <application
         android:name="com.system.SHZApplication"
         android:icon="@drawable/ic_launcher"
@@ -36,6 +40,12 @@
         <activity android:name="com.activity.QRactivity" />
         <activity android:name="com.activity.PathActivity" />
         <activity android:name="com.activity.MemoryActivity" />
+        <activity android:name="com.opengl.OpenGLES20Complete" />
+        <activity android:name="com.opengl.RunOpenGl" />
+        <activity android:name="com.opengl.Run3Dopengl" />
+          <activity android:name="com.opengl.RunpParticles" />
+            <activity android:name="com.opengl.Run3DWorld" />
+      
         <activity
             android:name="com.qrcapture.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"

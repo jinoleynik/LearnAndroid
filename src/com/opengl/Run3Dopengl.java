@@ -3,6 +3,9 @@ package com.opengl;
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 
 /**
  * The initial Android Activity, setting and initiating
@@ -14,6 +17,7 @@ public class Run3Dopengl extends Activity {
 
 	/** The OpenGL View */
 	private GLSurfaceView glSurface;
+	private Lesson05 mRendre;
 
 	/**
 	 * Initiate the OpenGL View and set our own
@@ -22,12 +26,12 @@ public class Run3Dopengl extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		mRendre = new Lesson05(this);
 		//Create an Instance with this Activity
 		glSurface = new GLSurfaceView(this);
 		//Set our own Renderer
-		glSurface.setRenderer(new Lesson05());
-		//Set the GLSurface as View to this Activity
+		glSurface.setRenderer(mRendre);
+		//Set the GLSurface as View to this Activity	
 		setContentView(glSurface);
 	}
 
@@ -48,5 +52,7 @@ public class Run3Dopengl extends Activity {
 		super.onPause();
 		glSurface.onPause();
 	}
+
+
 
 }

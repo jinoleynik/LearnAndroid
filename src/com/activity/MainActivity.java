@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.example.learn.R;
 import com.opengl.Run3DWorld;
+import com.opengl.Run3Dopengl;
 
 public class MainActivity extends BaseActivity {
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends BaseActivity {
             startActivity(MemoryActivity.class);
             break;
         case R.id.btn_opengl:
-            startActivity(Run3DWorld.class);
+            startActivity(MyOpenGL.class);
             break;
             
         default:

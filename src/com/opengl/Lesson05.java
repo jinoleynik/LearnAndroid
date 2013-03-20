@@ -3,8 +3,11 @@ package com.opengl;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import android.opengl.GLU;
+import android.content.Context;
 import android.opengl.GLSurfaceView.Renderer;
+import android.opengl.GLSurfaceView;
+import android.opengl.GLU;
+import android.util.Log;
 
 /**
  * This is a port of the {@link http://nehe.gamedev.net} OpenGL 
@@ -31,25 +34,21 @@ import android.opengl.GLSurfaceView.Renderer;
  * 
  * @author Savas Ziplies (nea/INsanityDesign)
  */
-public class Lesson05 implements Renderer {
+public class Lesson05 extends GLSurfaceView implements  Renderer {
 	
-	/** Pyramid instance */
-	private Pyramid pyramid;
-	/** Cube instance */
-	private Cube cube;
-	
-	/** Angle For The Pyramid */
-	private float rtri; 	
-	/** Angle For The Cube */
-	private float rquad; 	
-	
-	/**
-	 * Instance the Pyramid and Cube objects
-	 */
-	public Lesson05() {
-		pyramid = new Pyramid();
-		cube = new Cube();
+	public Lesson05(Context context) {
+		super(context);
+		figure = new Figure();	
+		this.setRenderer(this);	
+		this.requestFocus();
+		this.setFocusableInTouchMode(true);
+		this.setOnTouchListener(figure);
 	}
+
+	private Figure figure;
+
+	
+
 
 	/**
 	 * The Surface is created/init()
@@ -72,24 +71,12 @@ public class Lesson05 implements Renderer {
 		//Clear Screen And Depth Buffer
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);	
 		gl.glLoadIdentity();					//Reset The Current Modelview Matrix
-		
-		//Drawing
-		gl.glTranslatef(0.0f, -1.2f, -7.0f);	//Move down 1.0 Unit And Into The Screen 7.0
-		//Minor change: Scale the Cube to 80 percent, otherwise it would be too large for the Emulator screen
-		gl.glScalef(0.8f, 0.8f, 0.8f); 			
-		gl.glRotatef(rquad, 1.0f, 1.0f, 1.0f);	//Rotate The Square On The X axis 
-		cube.draw(gl);							//Draw the Cube
-		
-		//Reset The Current Modelview Matrix
-		gl.glLoadIdentity(); 					
-		
-		gl.glTranslatef(0.0f, 1.3f, -6.0f);		//Move up 1.3 Units and -6.0 as the origin matrix is loaded before		
-		gl.glRotatef(rtri, 0.0f, 1.0f, 0.0f);	//Rotate The Triangle On The Y axis
-		pyramid.draw(gl);						//Draw the Pyramid		
-		
-		//Rotation
-		rtri += 0.2f; 							//Increase The Rotation Variable For The Pyramid 
-		rquad -= 0.15f; 						//Decrease The Rotation Variable For The Cube
+	//	gl.glLoadIdentity(); 		
+		gl.glTranslatef(1.0f, 1.0f, 1.0f);		//Move up 1.3 Units and -6.0 as the origin matrix is loaded before		
+	//	gl.glRotatef(rtri, 0.0f, 1.0f, 0.0f);	//Rotate The Triangle On The Y axis
+
+		figure.draw(gl);						//Draw the Pyramid		
+	
 	}
 
 	/**

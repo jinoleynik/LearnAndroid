@@ -34,18 +34,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.activity.WispActivity" />
+        <activity
+            android:name="com.activity.WispActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="com.activity.ActivityZoom" />
         <activity android:name="com.activity.RVSActivity" />
         <activity android:name="com.activity.QRactivity" />
         <activity android:name="com.activity.PathActivity" />
         <activity android:name="com.activity.MemoryActivity" />
-        <activity android:name="com.opengl.OpenGLES20Complete" />
-        <activity android:name="com.opengl.RunOpenGl" />
-        <activity android:name="com.opengl.Run3Dopengl" />
-          <activity android:name="com.opengl.RunpParticles" />
-            <activity android:name="com.opengl.Run3DWorld" />
-      
+        <activity android:name="com.activity.MyOpenGL" />
         <activity
             android:name="com.qrcapture.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"

@@ -87,8 +87,7 @@ public class MyOpenGL extends BaseActivity implements OnTouchListener,
     private boolean touchCur(float x, float y) {
         boolean bo = false;
         if (mCurX + 30 > x && mCurX - 30 < x && mCurY + 30 > y
-                && mCurY - 30 < y) {
-           Log.d("my_log", "popal");
+                && mCurY - 30 < y) {    
             bo =  true;
         } else {
             bo =   false;
@@ -102,8 +101,8 @@ public class MyOpenGL extends BaseActivity implements OnTouchListener,
         float y = event.getY() / mTestHarness.getWidth();
         mCurX = mTestHarness.getWidth()/2;
        mCurY = mTestHarness.getHeight()/2;   
-        boolean moveable = false;
-        moveable = touchCur(event.getX(), event.getY());
+//        boolean moveable = false;
+//        moveable = touchCur(event.getX(), event.getY());
         switch (event.getAction()) {
         case MotionEvent.ACTION_DOWN:
           
@@ -146,15 +145,15 @@ public class MyOpenGL extends BaseActivity implements OnTouchListener,
     }
 
     @Override
-    public void oOuch() {  
-        mZ -= 1;
+    public void oOuch(float rate) {  
+        mZ -= (1-rate)*5;
     nSize.setText("" + mZ);
         
     }
 
     @Override
-    public void Heal() {
-        mZ += 1;
+    public void Heal(float rate) {
+        mZ += (1-rate)*5;
         nSize.setText("" + mZ);
         
     }

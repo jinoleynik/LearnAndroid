@@ -6,9 +6,9 @@ import android.util.Log;
 
 public class Scene1 extends AbsRender {
     public interface Ouch {
-        void oOuch();
+        void oOuch(float rate);
 
-        void Heal();
+        void Heal(float rate);
     }
 
     private Ouch mOuch;
@@ -27,7 +27,7 @@ public class Scene1 extends AbsRender {
 
     public Scene1() {
         some3 = new Somefig(0.3f);
-        main = new Somefig(0.6f);
+        main = new Somefig(0.1f);
         back = new Somefig(5);
     }
 
@@ -40,18 +40,18 @@ public class Scene1 extends AbsRender {
         mY = -(-3 + 6 * g);
         if (mX > 0.8f && mX < 1.2f && mY > 0.8f && mY < 1.2f) {
 
-            mOuch.Heal();
+            mOuch.Heal(mRRate);
         }
         if (-mX > 0.8f && -mX < 1.2f && -mY > 0.8f && -mY < 1.2f) {
 
-            mOuch.Heal();
+            mOuch.Heal(mRRate);
         }
         if (mX > 0.8f && mX < 1.2f && -mY > 0.8f && -mY < 1.2f) {
-            mOuch.oOuch();
+            mOuch.oOuch(mRRate);
 
         }
         if (-mX > 0.8f && -mX < 1.2f && mY > 0.8f && mY < 1.2f) {
-            mOuch.oOuch();
+            mOuch.oOuch(mRRate);
 
         }
     }

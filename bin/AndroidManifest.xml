@@ -43,6 +43,7 @@
         <activity android:name="com.activity.PathActivity" />
         <activity android:name="com.activity.MemoryActivity" />
         <activity android:name="com.activity.MyOpenGL" />
+        <activity android:name="com.activity.CanvasActivity" />
         <activity
             android:name="com.qrcapture.CaptureActivity"
             android:configChanges="orientation|keyboardHidden"

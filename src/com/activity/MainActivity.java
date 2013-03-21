@@ -13,7 +13,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         registerOnClickListener(new int[] { R.id.btn_wisp, R.id.btn_zoom,
-                 R.id.btn_qr, R.id.btn_path, R.id.btn_memory,R.id.btn_opengl}, this.getCurrentFocus());
+                 R.id.btn_qr, R.id.btn_path, R.id.btn_memory,R.id.btn_opengl, R.id.btn_canvas}, this.getCurrentFocus());
     }
 
     @Override
@@ -38,7 +38,9 @@ public class MainActivity extends BaseActivity {
         case R.id.btn_opengl:
             startActivity(MyOpenGL.class);
             break;
-            
+        case R.id.btn_canvas:
+            startActivity(CanvasActivity.class);
+            break; 
         default:
             break;
         }

@@ -1,7 +1,9 @@
-package com.logik;
+package com.view;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.logik.XY;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,12 +12,12 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.LinearLayout.LayoutParams;
 
-public class PathDrawer extends View {
+public class PathDrawerView extends View {
 	Paint paint;
 	private int mYMax;
 	private int mXMax;
 
-	public PathDrawer(Context context) {
+	public PathDrawerView(Context context) {
 		super(context);
 		paint = new Paint();
 		setBackgroundColor(Color.BLACK);

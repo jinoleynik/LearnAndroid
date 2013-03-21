@@ -39,5 +39,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="OPENGL" />
-
+    
+    <Button
+        android:id="@+id/btn_canvas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CANVAS" />
 </LinearLayout>

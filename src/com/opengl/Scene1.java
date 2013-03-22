@@ -18,7 +18,6 @@ public class Scene1 extends AbsRender {
     private float mRRate;
     private float mX = 0;
     private float mY = 0;
-
     private Somefig main;
 
     public void setOuchListener(Ouch listener) {

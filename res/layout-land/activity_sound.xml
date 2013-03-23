@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff7e7eae"
+    android:baselineAligned="false" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/record"
+            style="@style/ControlButton"
+            android:text="startrecord" />
+
+        <Button
+            android:id="@+id/stop"
+            style="@style/ControlButton"
+            android:text="stoprecord" />
+
+        <Button
+            android:id="@+id/playrecord"
+            style="@style/ControlButton"
+            android:text="playrecord" />
+
+        <Button
+            android:id="@+id/stopplayrecord"
+            style="@style/ControlButton"
+            android:text="stopplay" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/ps0"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps1"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps2"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps3"
+                style="@style/SoundButton" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/ps4"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps5"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps6"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps7"
+                style="@style/SoundButton" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/ps8"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps9"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps10"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps11"
+                style="@style/SoundButton" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/ps12"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps13"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps14"
+                style="@style/SoundButton" />
+
+            <Button
+                android:id="@+id/ps15"
+                style="@style/SoundButton" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

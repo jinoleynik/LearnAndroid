@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent" android:layout_height="fill_parent"
-	android:background="#FF8090A0">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF8090A0"
+    android:orientation="vertical" >
 
-	<Button 
-	    android:layout_height="match_parent"
-	    android:layout_width="match_parent"
-	    android:id="@+id/playsound"
-	    android:text="play"/>
+    <Button
+        android:id="@+id/playsound1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play" />
 
+    <Button
+        android:id="@+id/playsound2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/playsound3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play" />
+
+    <Button
+        android:id="@+id/playsound4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play" />
+
+    <Button
+        android:id="@+id/playsound5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play" />
+        <Button
+        android:id="@+id/record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="record" />
+            <Button
+        android:id="@+id/stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop" />
+                <Button
+        android:id="@+id/playrecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="playrecord" />
+
+</LinearLayout>

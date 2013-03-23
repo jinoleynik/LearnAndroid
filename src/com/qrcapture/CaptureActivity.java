@@ -259,7 +259,7 @@ public final class CaptureActivity extends BaseActivity implements
             sendBroadcast(sendcode);
             ((SHZApplication) getApplication()).addQRText(rawResult.getText());
             Toast.makeText(this, "add res", Toast.LENGTH_SHORT).show();
-            playResource(R.raw.ugu);
+            playResource(R.raw.ccymbal);
         }
         restartScan();
         // startService(sendcode);

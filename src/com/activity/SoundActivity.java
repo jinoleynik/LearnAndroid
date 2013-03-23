@@ -1,83 +1,164 @@
 package com.activity;
 
-import android.media.AudioFormat;
-import android.media.AudioManager;
-import android.media.AudioTrack;
+import java.io.IOException;
+
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Handler;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 
 import com.example.learn.R;
+import com.logik.SoundMachine;
 
 public class SoundActivity extends BaseActivity {
 
-    private final int duration = 3; // seconds
-    private final int sampleRate = 8000;
-    private final int numSamples = duration * sampleRate;
-    private final double sample[] = new double[numSamples];
-    private final double freqOfTone = 440; // hz
 
-    private final byte generatedSnd[] = new byte[2 * numSamples];
+	private SoundMachine mSound;
+	private MediaPlayer mPlayer;
+	private String filename = Environment.getExternalStorageDirectory()
+			+ "/Others/file.aac";
+	private MediaRecorder mAudioRecorder;
 
-    Handler handler = new Handler();
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {	
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound);
-		findViewById(R.id.playsound).setOnClickListener(this);
+		mSound = new SoundMachine(this);
+	
+
+		mSound.addSound(0, R.raw.ccymbal);
+		mSound.addSound(1, R.raw.cht);
+		mSound.addSound(2, R.raw.cic);
+		mSound.addSound(3, R.raw.clav);
+		mSound.addSound(4, R.raw.cnga);
+		mSound.addSound(5, R.raw.cowb);
+		mSound.addSound(6, R.raw.cymb);
+		mSound.addSound(7, R.raw.hat);
+		mSound.addSound(8, R.raw.kick);
+		mSound.addSound(9, R.raw.nar);
+		mSound.addSound(10, R.raw.rim);
+		mSound.addSound(11, R.raw.tik);
+		mSound.addSound(12, R.raw.tom);
+		mSound.addSound(13, R.raw.tomm);
+		mSound.addSound(14, R.raw.tuum);
+		mSound.addSound(15, R.raw.wood);
+		registerOnClickListener(new int[] { R.id.ps0, R.id.ps1, R.id.ps2,
+				R.id.ps3, R.id.ps4, R.id.ps5, R.id.ps6, R.id.ps7, R.id.ps8,
+				R.id.ps9, R.id.ps10, R.id.ps11, R.id.ps12, R.id.ps13,
+				R.id.ps14, R.id.ps15, R.id.record, R.id.stop, R.id.playrecord, R.id.stopplayrecord}, null);
 	}
-	   @Override
-	    protected void onResume() {
-	        super.onResume();
 
-	        // Use a new tread as this can take a while
-	        final Thread thread = new Thread(new Runnable() {
-	            public void run() {
-	                genTone();
-	                handler.post(new Runnable() {
+	private void startRecord() {
+		mAudioRecorder = new MediaRecorder();
+		mAudioRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
+		mAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
+		mAudioRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+		mAudioRecorder.setOutputFile(filename);
+		try {
+			mAudioRecorder.prepare();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		mAudioRecorder.start();
+	}
 
-	                    public void run() {
-	                        playSound();
-	                    }
-	                });
-	            }
-	        });
-	        thread.start();
-	    }
+	private void stopRecord() {
+		mAudioRecorder.stop();
+		mAudioRecorder.release();
+	}
+private void stopPlay(){
+	mPlayer.stop();
+	mPlayer.release();
+	mPlayer = null;
+}
+	private void startPlaying() {
+		mPlayer = new MediaPlayer();
+		try {
+			mPlayer.setDataSource(filename);
+			mPlayer.setLooping(true);
+		
+			mPlayer.prepare();
+			mPlayer.start();
+		} catch (IOException e) {
+			Log.e("my_log", "prepare() failed");
+		}
+	}
 
-	    void genTone(){
-	        // fill out the array
-	        for (int i = 0; i < numSamples; ++i) {
-	            sample[i] = Math.sin(2 * Math.PI * i / (sampleRate/freqOfTone));
-	        }
+	@Override
+	protected void onResume() {
+		super.onResume();
 
-	        // convert to 16 bit pcm sound array
-	        // assumes the sample buffer is normalised.
-	        int idx = 0;
-	        for (final double dVal : sample) {
-	            // scale to maximum amplitude
-	            final short val = (short) ((dVal * 32767));
-	            // in 16 bit wav PCM, first byte is the low order byte
-	            generatedSnd[idx++] = (byte) (val & 0x00ff);
-	            generatedSnd[idx++] = (byte) ((val & 0xff00) >>> 8);
+	}
 
-	        }
-	    }
-
-	    void playSound(){
-	        final AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
-	                sampleRate, AudioFormat.CHANNEL_CONFIGURATION_MONO,
-	                AudioFormat.ENCODING_PCM_16BIT, numSamples,
-	                AudioTrack.MODE_STATIC);
-	        audioTrack.write(generatedSnd, 0, generatedSnd.length);
-	        audioTrack.play();
-	    }
 	@Override
 	public void onClick(View v) {
-		
+		switch (v.getId()) {
+		case R.id.ps0:
+			mSound.playSound(0);
+			break;
+		case R.id.ps1:
+			mSound.playSound(1);
+			break;
+		case R.id.ps2:
+			mSound.playSound(2);
+			break;
+		case R.id.ps3:
+			mSound.playSound(3);
+			break;
+		case R.id.ps4:
+			mSound.playSound(4);
+			break;
+		case R.id.ps5:
+			mSound.playSound(5);
+			break;
+		case R.id.ps6:
+			mSound.playSound(6);
+			break;
+		case R.id.ps7:
+			mSound.playSound(7);
+			break;
+		case R.id.ps8:
+			mSound.playSound(8);
+			break;
+		case R.id.ps9:
+			mSound.playSound(9);
+			break;
+		case R.id.ps10:
+			mSound.playSound(10);
+			break;
+		case R.id.ps11:
+			mSound.playSound(11);
+			break;
+		case R.id.ps12:
+			mSound.playSound(12);
+			break;
+		case R.id.ps13:
+			mSound.playSound(13);
+			break;
+		case R.id.ps14:
+			mSound.playSound(14);
+			break;
+		case R.id.ps15:
+			mSound.playSound(15);
+			break;
+		case R.id.record:
+			startRecord();
+			break;
+		case R.id.stop:
+			stopRecord();
+			break;
+		case R.id.playrecord:
+			startPlaying();
+			break;
+		case R.id.stopplayrecord:
+			stopPlay();
+			break;
+		}
 
 	}
-
-	
 
 }

@@ -103,11 +103,12 @@ public final class R {
         public static final int btn_path=0x7f07003e;
         public static final int btn_qr=0x7f07003d;
         public static final int btn_qrcode=0x7f070017;
+        public static final int btn_rotate_img=0x7f070043;
         public static final int btn_wisp=0x7f07003b;
         public static final int btn_zoom=0x7f07003c;
-        public static final int col1=0x7f070049;
-        public static final int col2=0x7f07004a;
-        public static final int col3=0x7f07004b;
+        public static final int col1=0x7f07004a;
+        public static final int col2=0x7f07004b;
+        public static final int col3=0x7f07004c;
         public static final int color_first=0x7f070038;
         public static final int color_second=0x7f070039;
         public static final int conteiner=0x7f070010;
@@ -117,14 +118,14 @@ public final class R {
         public static final int deleteitem=0x7f070014;
         public static final int encode_failed=0x7f070004;
         public static final int encode_succeeded=0x7f070005;
-        public static final int flipper=0x7f070045;
-        public static final int image_view_zoom=0x7f070047;
+        public static final int flipper=0x7f070046;
+        public static final int image_view_zoom=0x7f070048;
         public static final int launch_product_query=0x7f070006;
         public static final int left_panel=0x7f070033;
         public static final int listView1=0x7f070015;
         public static final int main=0x7f070011;
-        public static final int menu_settings=0x7f070048;
-        public static final int oneid=0x7f070043;
+        public static final int menu_settings=0x7f070049;
+        public static final int oneid=0x7f070044;
         public static final int playrecord=0x7f070020;
         public static final int playsound1=0x7f070019;
         public static final int playsound2=0x7f07001a;
@@ -152,14 +153,14 @@ public final class R {
         public static final int record=0x7f07001e;
         public static final int restart_preview=0x7f070008;
         public static final int return_scan_result=0x7f070009;
-        public static final int secondtwo=0x7f070044;
+        public static final int secondtwo=0x7f070045;
         public static final int seekBar1=0x7f07000f;
         public static final int size=0x7f07000d;
         public static final int stop=0x7f07001f;
         public static final int stopplayrecord=0x7f070021;
         public static final int textall=0x7f070016;
         public static final int tv_codes=0x7f070018;
-        public static final int twoid=0x7f070046;
+        public static final int twoid=0x7f070047;
         public static final int updateitem=0x7f070013;
         public static final int viewfinder_view=0x7f07000b;
         public static final int webview=0x7f070032;
@@ -204,7 +205,8 @@ public final class R {
         public static final int tom=0x7f05000c;
         public static final int tomm=0x7f05000d;
         public static final int tuum=0x7f05000e;
-        public static final int wood=0x7f05000f;
+        public static final int ugu=0x7f05000f;
+        public static final int wood=0x7f050010;
     }
     public static final class string {
         public static final int app_name=0x7f080000;

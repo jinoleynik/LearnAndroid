@@ -48,23 +48,35 @@ public class RotateImageView extends View {
         case MotionEvent.ACTION_DOWN:
             if (event.getPointerCount() > 1) {
                 mScale = 0.5f;
-                invalidate();
+//                invalidate();
+                mPosY1 = event.getY(0);
+                mPosY2 = event.getY(1);
+                Log.d("my_log", "y = " + mPosY1);
             }
             break;
         case MotionEvent.ACTION_MOVE:
             if (event.getPointerCount() > 1) {
+              
                 // mGestureDetector.onTouchEvent(event);
                 float y1 = event.getY(0);
                 float y2 = event.getY(1);
-                float x1 = event.getX(0);
-                float x2 = event.getX(1);
-                float koefY = y1 < y2 ? -y2 / y1 : y1 / y2;
-                float koefX = x1 < x2 ? -x2 / x1 : x1 / x2;
-                if(koefY>5) koefY =5;
-                if(koefX>5) koefX =5;
-                if(koefY<-5) koefY =-5;
-                if(koefX<-5) koefX =-5;
-                mDeg += koefX + koefY;
+                float dist1 = (getHeight()-mPosY2)/y2;
+              float dist2 = (getHeight() -y1)/mPosY1;
+                mDeg +=dist1+dist2;
+//                if(y1>mPosY1 && y2< mPosY2){
+//                    float dist1 = (getHeight()-mPosY2)/y2;
+//                    float dist2 = (getHeight() -y1)/mPosY1;
+//                    mDeg +=dist1+dist2;
+//                }
+//                float x1 = event.getX(0);
+//                float x2 = event.getX(1);
+//                float koefY = y1 < y2 ? -y2 / y1 : y1 / y2;
+//                float koefX = x1 < x2 ? -x2 / x1 : x1 / x2;
+//                if(koefY>5) koefY =5;
+//                if(koefX>5) koefX =5;
+//                if(koefY<-5) koefY =-5;
+//                if(koefX<-5) koefX =-5;
+//                mDeg +=  koefY;
                 if (mDeg > 360)
                     mDeg = 0;
                 Log.d("my_log", "deg="+mDeg);

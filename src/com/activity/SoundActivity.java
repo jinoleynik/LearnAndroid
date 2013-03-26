@@ -2,6 +2,8 @@ package com.activity;
 
 import java.io.IOException;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
@@ -20,14 +22,16 @@ public class SoundActivity extends BaseActivity {
 	private String filename = Environment.getExternalStorageDirectory()
 			+ "/Others/file.aac";
 	private MediaRecorder mAudioRecorder;
+	private AudioManager audioManager;
+	private int oldAudioMode;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sound);
 		mSound = new SoundMachine(this);
-	
-
+		  audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+		 oldAudioMode = audioManager.getMode();
 		mSound.addSound(0, R.raw.ccymbal);
 		mSound.addSound(1, R.raw.cht);
 		mSound.addSound(2, R.raw.cic);
@@ -51,6 +55,10 @@ public class SoundActivity extends BaseActivity {
 	}
 
 	private void startRecord() {
+		
+		audioManager.setMicrophoneMute(true);
+		  audioManager.setMode(AudioManager.MODE_IN_CALL);
+	     
 		mAudioRecorder = new MediaRecorder();
 		mAudioRecorder.setAudioSource(MediaRecorder.AudioSource.DEFAULT);
 		mAudioRecorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT);
@@ -64,9 +72,12 @@ public class SoundActivity extends BaseActivity {
 			e.printStackTrace();
 		}
 		mAudioRecorder.start();
+		audioManager.setMicrophoneMute(true);
 	}
 
 	private void stopRecord() {
+		audioManager.setMode(oldAudioMode);
+		audioManager.setMicrophoneMute(false);
 		mAudioRecorder.stop();
 		mAudioRecorder.release();
 	}

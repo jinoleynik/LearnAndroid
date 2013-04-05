@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.learn.R;
-import com.opengl.Run3DWorld;
-import com.opengl.Run3Dopengl;
 
 public class MainActivity extends BaseActivity {
     @Override
@@ -13,7 +11,9 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
         registerOnClickListener(new int[] { R.id.btn_wisp, R.id.btn_zoom,
-                 R.id.btn_qr, R.id.btn_path, R.id.btn_memory,R.id.btn_opengl, R.id.btn_canvas,R.id.btn_audio}, this.getCurrentFocus());
+                R.id.btn_qr, R.id.btn_path, R.id.btn_memory, R.id.btn_opengl,
+                R.id.btn_canvas, R.id.btn_audio, R.id.btn_rotate_img,
+                R.id.btn_game }, null);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
         case R.id.btn_zoom:
             startActivity(ActivityZoom.class);
             break;
-      
+
         case R.id.btn_qr:
             startActivity(QRactivity.class);
             break;
@@ -40,11 +40,15 @@ public class MainActivity extends BaseActivity {
             break;
         case R.id.btn_canvas:
             startActivity(CanvasActivity.class);
-            break; 
+            break;
         case R.id.btn_audio:
             startActivity(SoundActivity.class);
             break;
-        default:
+        case R.id.btn_rotate_img:
+            startActivity(RotateImageActivity.class);
+            break;
+        case R.id.btn_game:
+            startActivity(GameActivity.class);
             break;
         }
 

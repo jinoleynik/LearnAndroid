@@ -29,6 +29,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private int mCurY;
     private int mImW;
     private int mImH;
+    
 private int mFrame;
 private Bitmap mBack;
     public GameView(Context context) {

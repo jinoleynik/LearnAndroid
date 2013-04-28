@@ -20,8 +20,10 @@ public abstract class AbsRender implements Renderer {
         gl.glLoadIdentity();                    //Reset The Projection Matrix
 
         //Calculate The Aspect Ratio Of The Window
+        
         GLU.gluPerspective(gl, 45.0f, (float)width / (float)height, 0.1f, 100.0f);
-
+//        GLU.gluLookAt(gl, 0, 0, 0, 0, 0, 0, 0, 1, 0);
+//GLU.gluOrtho2D(gl, 0, width, height, 0);
         gl.glMatrixMode(GL10.GL_MODELVIEW);     //Select The Modelview Matrix
         gl.glLoadIdentity();                    //Reset The Modelview Matrix
     }

@@ -13,6 +13,9 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.example.learn.R;
+import com.opengl.Lesson04;
+import com.opengl.Lesson05;
+import com.opengl.Lesson09;
 import com.opengl.Scene1;
 import com.opengl.Scene1.Ouch;
 
@@ -38,7 +41,8 @@ public class MyOpenGL extends BaseActivity implements OnTouchListener,
         mScene1 = new Scene1();
         mTestHarness = new GLSurfaceView(this);
         mTestHarness.setEGLConfigChooser(false);
-        mTestHarness.setRenderer(mScene1);
+        //mTestHarness.setRenderer(mScene1);
+        mTestHarness.setRenderer(new Lesson09(this));
         mTestHarness.setOnTouchListener(this);
 
         mUp = (Button) findViewById(R.id.z_up);

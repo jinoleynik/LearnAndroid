@@ -25,8 +25,8 @@ public class Scene1 extends AbsRender {
     }
 
     public Scene1() {
-        some3 = new Somefig(0.3f);
-        main = new Somefig(0.1f);
+        some3 = new Somefig(2.3f);
+        main = new Somefig(3.1f);
         back = new Somefig(5);
     }
 

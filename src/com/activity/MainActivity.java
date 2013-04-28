@@ -10,6 +10,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        startActivity(SoundActivity.class);
         registerOnClickListener(new int[] { R.id.btn_wisp, R.id.btn_zoom,
                 R.id.btn_qr, R.id.btn_path, R.id.btn_memory, R.id.btn_opengl,
                 R.id.btn_canvas, R.id.btn_audio, R.id.btn_rotate_img,
